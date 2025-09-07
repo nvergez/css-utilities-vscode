@@ -1,0 +1,150 @@
+{
+  "name": "custom-css-intellisense",
+  "displayName": "Custom CSS Utilities IntelliSense",
+  "description": "Intelligent autocomplete and preview for custom CSS utility classes with support for CSS, SCSS, and SASS files",
+  "version": "0.1.0",
+  "publisher": "nvergez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nvergez/css-utilities-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/nvergez/css-utilities-vscode/issues"
+  },
+  "homepage": "https://github.com/nvergez/css-utilities-vscode#readme",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Language Packs"
+  ],
+  "keywords": [
+    "css",
+    "scss",
+    "sass",
+    "autocomplete",
+    "intellisense",
+    "utility classes",
+    "tailwind",
+    "postcss"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onLanguage:html",
+    "onLanguage:vue"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "customCSSIntelliSense.rescanFiles",
+        "title": "Custom CSS: Rescan Files"
+      },
+      {
+        "command": "customCSSIntelliSense.clearCache",
+        "title": "Custom CSS: Clear Cache"
+      },
+      {
+        "command": "customCSSIntelliSense.showStatistics",
+        "title": "Custom CSS: Show Statistics"
+      },
+      {
+        "command": "customCSSIntelliSense.findUnusedClasses",
+        "title": "Custom CSS: Find Unused Classes"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Custom CSS IntelliSense",
+      "properties": {
+        "customCSSIntelliSense.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the extension"
+        },
+        "customCSSIntelliSense.include": {
+          "type": "array",
+          "default": [
+            "**/*.{css,scss,sass,less}"
+          ],
+          "description": "Glob patterns for files to include"
+        },
+        "customCSSIntelliSense.exclude": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/dist/**",
+            "**/build/**"
+          ],
+          "description": "Glob patterns for files to exclude"
+        },
+        "customCSSIntelliSense.languages": {
+          "type": "array",
+          "default": [
+            "javascript",
+            "typescript",
+            "javascriptreact",
+            "typescriptreact",
+            "html",
+            "vue"
+          ],
+          "description": "Languages where autocomplete should be active"
+        },
+        "customCSSIntelliSense.showUsageCount": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show usage count in autocomplete suggestions"
+        },
+        "customCSSIntelliSense.showCategory": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show category in autocomplete suggestions"
+        },
+        "customCSSIntelliSense.enableDiagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable validation and diagnostics"
+        },
+        "customCSSIntelliSense.maxSuggestions": {
+          "type": "number",
+          "default": 50,
+          "description": "Maximum number of suggestions to show"
+        },
+        "customCSSIntelliSense.fuzzySearch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable fuzzy search in autocomplete"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.103.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "postcss": "^8.5.6",
+    "postcss-scss": "^4.0.9"
+  }
+}

@@ -1,0 +1,63 @@
+/* Test CSS file for Custom CSS IntelliSense extension */
+
+/**
+ * @category Layout
+ * @description Centers elements both horizontally and vertically
+ */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * @category Typography
+ * @description Primary text color for headings
+ */
+.text-primary {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/**
+ * @category Spacing
+ */
+.margin-large {
+  margin: 2rem;
+}
+
+.padding-small {
+  padding: 0.5rem;
+}
+
+/**
+ * @category Background
+ * @description Light background for cards
+ */
+.bg-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-primary:hover {
+  background-color: #0056b3;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
